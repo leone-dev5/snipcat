@@ -1,0 +1,9 @@
+.bar_choose{
+  position: absolute;
+  height: 70px;
+  width: 50px;
+  background: white;
+  left: 10%;
+  margin: 2px 0;
+  display: none;
+}

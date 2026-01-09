@@ -1,0 +1,99 @@
+
+.box_work{
+  position: absolute;
+  display: flex;
+  width: 400px;
+  max-width: 4000px;
+  height: 400px;
+  max-height: 4000px;
+  border: 2px dashed #00f;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.work-image {
+  position: absolute;
+  background: white;
+  image-rendering: pixelated;
+}
+.workspace {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.guide {
+  position: absolute;
+  background-color: rgba(0, 150, 255, 0.7);
+  z-index: 100;
+  cursor: move;
+  transition: background-color 0.2s;
+}
+
+.guide:hover {
+  background-color: rgba(0, 150, 255, 0.9);
+}
+
+.guide.horizontal {
+  width: 100%;
+  height: 2px;
+  cursor: ns-resize;
+}
+
+.guide.vertical {
+  width: 2px;
+  height: 100%;
+  cursor: ew-resize;
+}
+
+/* Manipuladores de redimensionamento */
+.guide-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(0, 150, 255, 1);
+  border: 1px solid white;
+  border-radius: 50%;
+  z-index: 101;
+  cursor: pointer;
+}
+
+.guide-handle.start {
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.guide-handle.end {
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.guide.horizontal .guide-handle.start {
+  left: 50%;
+  top: -5px;
+  transform: translateX(-50%);
+}
+
+.guide.horizontal .guide-handle.end {
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+}
+
+/* Para guias horizontais */
+.guide.horizontal .guide-handle {
+  cursor: ew-resize;
+}
+
+/* Para guias verticais */
+.guide.vertical .guide-handle {
+  cursor: ns-resize;
+}
